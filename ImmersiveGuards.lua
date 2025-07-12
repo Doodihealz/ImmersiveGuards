@@ -1,5 +1,5 @@
-﻿local CITY_BY_NPC_ID = {
-    [68] = "stormwind",
+local CITY_BY_NPC_ID = {
+    [68]   = "stormwind",
     [1976] = "stormwind",
     [1756] = "stormwind",
     [5595] = "ironforge",
@@ -70,81 +70,54 @@ local CITY_CONFIG = {
 }
 
 local response_keys = {
-    ["warrior trainer"] = "warrior",
-    ["warrior"] = "warrior",
-    ["auction house"] = "auction house",
-    ["bank"] = "bank",
-    ["stormwind harbor"] = "stormwind harbor",
-    ["harbor"] = "stormwind harbor",
-    ["deeprun tram"] = "deeprun tram",
-    ["inn"] = "inn",
-    ["gryphon master"] = "gryphon master",
-    ["guild master"] = "guild master",
-    ["locksmith"] = "locksmith",
-    ["stable master"] = "stable master",
-    ["barber"] = "barber",
-    ["officer's lounge"] = "officer's lounge",
-    ["officers lounge"] = "officer's lounge",
-    ["battlemaster"] = "battlemaster",
-    ["alchemy"] = "alchemy",
-    ["leatherworking"] = "leatherworking",
-    ["herbalism"] = "herbalism",
-    ["herb"] = "herbalism",
-    ["mining"] = "mining",
-    ["blacksmithing"] = "blacksmithing",
-    ["cooking"] = "cooking",
-    ["enchanting"] = "enchanting",
-    ["engineering"] = "engineering",
-    ["first aid"] = "first aid",
-    ["fishing"] = "fishing",
-    ["inscription"] = "inscription",
-    ["skinning"] = "skinning",
-    ["tailoring"] = "tailoring",
-    ["druid trainer"] = "druid",
-    ["druid"] = "druid",
-    ["hunter trainer"] = "hunter",
-    ["hunter"] = "hunter",
-    ["mage trainer"] = "mage",
-    ["mage"] = "mage",
-    ["paladin trainer"] = "paladin",
-    ["paladin"] = "paladin",
-    ["priest trainer"] = "priest",
-    ["priest"] = "priest",
-    ["rogue trainer"] = "rogue",
-    ["rogue"] = "rogue",
-    ["shaman trainer"] = "shaman",
-    ["shaman"] = "shaman",
-    ["warlock trainer"] = "warlock",
-    ["warlock"] = "warlock"
+    ["warrior trainer"] = "warrior", ["warrior"] = "warrior", ["auction house"] = "auction house",
+    ["bank"] = "bank", ["stormwind harbor"] = "stormwind harbor", ["harbor"] = "stormwind harbor",
+    ["deeprun tram"] = "deeprun tram", ["inn"] = "inn", ["gryphon master"] = "gryphon master",
+    ["guild master"] = "guild master", ["locksmith"] = "locksmith", ["stable master"] = "stable master",
+    ["barber"] = "barber", ["officer's lounge"] = "officer's lounge", ["officers lounge"] = "officer's lounge",
+    ["battlemaster"] = "battlemaster", ["alchemy"] = "alchemy", ["leatherworking"] = "leatherworking",
+    ["herbalism"] = "herbalism", ["herb"] = "herbalism", ["mining"] = "mining",
+    ["blacksmithing"] = "blacksmithing", ["cooking"] = "cooking", ["enchanting"] = "enchanting",
+    ["engineering"] = "engineering", ["first aid"] = "first aid", ["fishing"] = "fishing",
+    ["inscription"] = "inscription", ["skinning"] = "skinning", ["tailoring"] = "tailoring",
+    ["druid trainer"] = "druid", ["druid"] = "druid", ["hunter trainer"] = "hunter", ["hunter"] = "hunter",
+    ["mage trainer"] = "mage", ["mage"] = "mage", ["paladin trainer"] = "paladin", ["paladin"] = "paladin",
+    ["priest trainer"] = "priest", ["priest"] = "priest", ["rogue trainer"] = "rogue", ["rogue"] = "rogue",
+    ["shaman trainer"] = "shaman", ["shaman"] = "shaman", ["warlock trainer"] = "warlock", ["warlock"] = "warlock"
 }
 
 local welcomeReplies = {
-    "You're welcome. Now move along please.",
-    "Don't mention it.",
-    "Happy to help... I guess.",
-    "Move along, citizen.",
-    "Just doing my job.",
-    "Fine, fine. You're welcome.",
-    "You're welcome. Try not to get lost again.",
-    "What do I look like, a tour guide?",
-    "Good day to you, citizen.",
-    "Let’s not make this a habit."
+    "You're welcome. Now move along please.", "Don't mention it.", "Happy to help... I guess.",
+    "Move along, citizen.", "Just doing my job.", "Fine, fine. You're welcome.",
+    "You're welcome. Try not to get lost again.", "What do I look like, a tour guide?",
+    "Good day to you, citizen.", "Let’s not make this a habit."
 }
 
-local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW =
-    10, 500, 30 * 1000, 5
-
+local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW = 10, 500, 30 * 1000, 5
 local interactionState = {}
+
+local function purgeState(pGUID, now)
+    local pdata = interactionState[pGUID]
+    if not pdata then return end
+    for npcGUID, keywords in pairs(pdata) do
+        for key, st in pairs(keywords) do
+            if st.lastReplyTime and now - st.lastReplyTime > COOLDOWN_TIME then
+                keywords[key] = nil
+            end
+        end
+        if next(keywords) == nil then
+            pdata[npcGUID] = nil
+        end
+    end
+    if next(pdata) == nil then interactionState[pGUID] = nil end
+end
 
 local function OnPlayerSay(event, player, msg)
     if player:GetTeam() ~= 0 then return end
-
     local lower = string.lower(msg)
-    if not lower:find("where") and not lower:find("thank") then return end
+    if not lower:find("where", 1, true) and not lower:find("thank", 1, true) then return end
 
-    local close, city
-    local distMin = DETECTION_RADIUS + 1
-
+    local close, city, distMin = nil, nil, DETECTION_RADIUS + 1
     for _, npc in ipairs(player:GetCreaturesInRange(DETECTION_RADIUS)) do
         local entry = npc:GetEntry()
         local cityName = CITY_BY_NPC_ID[entry]
@@ -155,22 +128,31 @@ local function OnPlayerSay(event, player, msg)
             end
         end
     end
-
     if not close or not city then return end
     local cfg = CITY_CONFIG[city]
     if not cfg then return end
 
     local pGUID = player:GetGUIDLow()
     local cGUID = close:GetGUIDLow()
+    local now = os.time()
+    purgeState(pGUID, now)
 
-    if lower:find("thank") then
-        if interactionState[pGUID] and interactionState[pGUID][cGUID] then
-            for _, state in pairs(interactionState[pGUID][cGUID]) do
-                if state.lastReplyTime and os.time() - state.lastReplyTime <= THANK_YOU_WINDOW then
-                    if not close:IsInCombat() and not close:IsInEvadeMode() then
-                        close:SendUnitSay(welcomeReplies[math.random(#welcomeReplies)], 0)
+    if lower:find("thank", 1, true) then
+        local pData = interactionState[pGUID]
+        if pData then
+            local nData = pData[cGUID]
+            if nData then
+                for _, st in pairs(nData) do
+                    if st.lastReplyTime and now - st.lastReplyTime <= THANK_YOU_WINDOW then
+                        if not close:IsInCombat() and not close:IsInEvadeMode() then
+                            CreateLuaEvent(function()
+                                if not close:IsInCombat() and not close:IsInEvadeMode() then
+                                    close:SendUnitSay(welcomeReplies[math.random(#welcomeReplies)], 0)
+                                end
+                            end, RESPONSE_DELAY, 1)
+                        end
+                        return
                     end
-                    return
                 end
             end
         end
@@ -178,7 +160,7 @@ local function OnPlayerSay(event, player, msg)
     end
 
     for alias, canonical in pairs(response_keys) do
-        if lower:find("where") and lower:find(alias) then
+        if lower:find(alias, 1, true) then
             local keyword = canonical
             local baseMsg = cfg.responses[keyword]
             if baseMsg then
@@ -186,47 +168,30 @@ local function OnPlayerSay(event, player, msg)
                 interactionState[pGUID][cGUID] = interactionState[pGUID][cGUID] or {}
                 local st = interactionState[pGUID][cGUID][keyword] or { count = 0 }
                 st.count = st.count + 1
-                st.lastReplyTime = os.time()
+                st.lastReplyTime = now
                 interactionState[pGUID][cGUID][keyword] = st
 
                 local responseText = baseMsg
                 if st.count == 2 then
-                if city == "ironforge" then
-                    responseText = "You’ve asked enough, lad."
-                else
-                    responseText = "Are you harassing me?"
+                    responseText = (city == "ironforge") and "You’ve asked enough, lad." or "Are you harassing me?"
+                elseif st.count == 3 then
+                    responseText = (city == "ironforge") and "Do I look like a bloody tour guide?" or "Leave me alone."
+                elseif st.count == 4 then
+                    responseText = (city == "ironforge") and "Say another word and you'll be cooling your heels in the Hall of Justice." or "I will take you to the Stockades if you continue to waste my time."
                 end
-            elseif st.count == 3 then
-                if city == "ironforge" then
-                    responseText = "Do I look like a bloody tour guide?"
-                else
-                    responseText = "Leave me alone."
-                end
-            elseif st.count == 4 then
-                if city == "ironforge" then
-                    responseText = "Say another word and you'll be cooling your heels in the Hall of Justice."
-                else
-                    responseText = "I will take you to the Stockades if you continue to waste my time."
-                end
-            end
 
-                local npcEntry = close:GetEntry()
-                local playerGUID = player:GetGUIDLow()
-                local reply = responseText
-               local npcGUID = close:GetGUIDLow()
-
+                local npcGUID = close:GetGUIDLow()
+                local playerGUID = pGUID
                 CreateLuaEvent(function()
                     local player = GetPlayerByGUID(playerGUID)
                     if not player then return end
-
-                    for _, npc in ipairs(player:GetCreaturesInRange(10)) do
+                    for _, npc in ipairs(player:GetCreaturesInRange(DETECTION_RADIUS)) do
                         if npc:GetGUIDLow() == npcGUID and not npc:IsInCombat() and not npc:IsInEvadeMode() then
-                            npc:SendUnitSay(reply, 0)
+                            npc:SendUnitSay(responseText, 0)
                             break
                         end
                     end
                 end, RESPONSE_DELAY, 1)
-
                 return
             end
         end
