@@ -93,7 +93,7 @@ local welcomeReplies = {
     "Good day to you, citizen.", "Let’s not make this a habit."
 }
 
-local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW = 10, 500, 30 * 1000, 5
+local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW = 10, 500, 30 * 1000, 15
 local interactionState = {}
 
 local function purgeState(pGUID, now)
@@ -117,42 +117,40 @@ local function OnPlayerSay(event, player, msg)
     local lower = string.lower(msg)
     if not lower:find("where", 1, true) and not lower:find("thank", 1, true) then return end
 
-    local close, city, distMin = nil, nil, DETECTION_RADIUS + 1
+    local closestNPC, city, bestDist = nil, nil, DETECTION_RADIUS + 1
     for _, npc in ipairs(player:GetCreaturesInRange(DETECTION_RADIUS)) do
-        local entry = npc:GetEntry()
-        local cityName = CITY_BY_NPC_ID[entry]
-        if cityName then
-            local dist = player:GetDistance(npc)
-            if dist < distMin then
-                close, city, distMin = npc, cityName, dist
+        local c = CITY_BY_NPC_ID[npc:GetEntry()]
+        if c then
+            local d = player:GetDistance(npc)
+            if d < bestDist then
+                closestNPC, city, bestDist = npc, c, d
             end
         end
     end
-    if not close or not city then return end
-    local cfg = CITY_CONFIG[city]
-    if not cfg then return end
+    if not closestNPC then return end
+    local cfg = CITY_CONFIG[city]; if not cfg then return end
 
-    local pGUID = player:GetGUIDLow()
-    local cGUID = close:GetGUIDLow()
-    local now = os.time()
+    local pGUID, cGUID, now = player:GetGUIDLow(), closestNPC:GetGUIDLow(), os.time()
     purgeState(pGUID, now)
 
-    if lower:find("thank", 1, true) then
+        if lower:find("thank", 1, true) then
         local pData = interactionState[pGUID]
-        if pData then
-            local nData = pData[cGUID]
-            if nData then
-                for _, st in pairs(nData) do
-                    if st.lastReplyTime and now - st.lastReplyTime <= THANK_YOU_WINDOW then
-                        if not close:IsInCombat() and not close:IsInEvadeMode() then
-                            CreateLuaEvent(function()
-                                if not close:IsInCombat() and not close:IsInEvadeMode() then
-                                    close:SendUnitSay(welcomeReplies[math.random(#welcomeReplies)], 0)
-                                end
-                            end, RESPONSE_DELAY, 1)
+        if pData and pData[cGUID] then
+            for _, st in pairs(pData[cGUID]) do
+                if st.lastReplyTime and now - st.lastReplyTime <= THANK_YOU_WINDOW then
+                    CreateLuaEvent(function()
+                        local pl = GetPlayerByGUID(pGUID)
+                        if not pl then return end
+                        for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
+                            if npc:GetGUIDLow() == cGUID
+                               and not npc:IsInCombat()
+                               and not npc:IsInEvadeMode() then
+                                npc:SendUnitSay(welcomeReplies[math.random(#welcomeReplies)], 0)
+                                break
+                            end
                         end
-                        return
-                    end
+                    end, RESPONSE_DELAY, 1)
+                    return
                 end
             end
         end
@@ -161,33 +159,35 @@ local function OnPlayerSay(event, player, msg)
 
     for alias, canonical in pairs(response_keys) do
         if lower:find(alias, 1, true) then
-            local keyword = canonical
-            local baseMsg = cfg.responses[keyword]
-            if baseMsg then
-                interactionState[pGUID] = interactionState[pGUID] or {}
-                interactionState[pGUID][cGUID] = interactionState[pGUID][cGUID] or {}
-                local st = interactionState[pGUID][cGUID][keyword] or { count = 0 }
-                st.count = st.count + 1
-                st.lastReplyTime = now
+            local keyword, base = canonical, cfg.responses[canonical]
+            if base then
+                interactionState[pGUID]            = interactionState[pGUID]            or {}
+                interactionState[pGUID][cGUID]     = interactionState[pGUID][cGUID]     or {}
+                local st                           = interactionState[pGUID][cGUID][keyword] or { count = 0 }
+                st.count                           = st.count + 1
                 interactionState[pGUID][cGUID][keyword] = st
 
-                local responseText = baseMsg
+                local r = base
                 if st.count == 2 then
-                    responseText = (city == "ironforge") and "You’ve asked enough, lad." or "Are you harassing me?"
+                    r = (city == "ironforge") and "You’ve asked enough, lad." or "Are you harassing me?"
                 elseif st.count == 3 then
-                    responseText = (city == "ironforge") and "Do I look like a bloody tour guide?" or "Leave me alone."
+                    r = (city == "ironforge") and "Do I look like a bloody tour guide?" or "Leave me alone."
                 elseif st.count == 4 then
-                    responseText = (city == "ironforge") and "Say another word and you'll be cooling your heels in the Hall of Justice." or "I will take you to the Stockades if you continue to waste my time."
+                    r = (city == "ironforge") and "Say another word and you'll be cooling your heels in the Hall of Justice." or "I will take you to the Stockades if you continue to waste my time."
                 end
 
-                local npcGUID = close:GetGUIDLow()
-                local playerGUID = pGUID
+                local npcGUID, playerGUID = cGUID, pGUID
                 CreateLuaEvent(function()
-                    local player = GetPlayerByGUID(playerGUID)
-                    if not player then return end
-                    for _, npc in ipairs(player:GetCreaturesInRange(DETECTION_RADIUS)) do
-                        if npc:GetGUIDLow() == npcGUID and not npc:IsInCombat() and not npc:IsInEvadeMode() then
-                            npc:SendUnitSay(responseText, 0)
+                    local pl = GetPlayerByGUID(playerGUID); if not pl then return end
+                    for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
+                        if npc:GetGUIDLow() == npcGUID
+                           and not npc:IsInCombat()
+                           and not npc:IsInEvadeMode() then
+                            npc:SendUnitSay(r, 0)
+                            local pd = interactionState[playerGUID]
+                            if pd and pd[npcGUID] and pd[npcGUID][keyword] then
+                                pd[npcGUID][keyword].lastReplyTime = os.time()
+                            end
                             break
                         end
                     end
