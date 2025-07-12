@@ -93,6 +93,12 @@ local welcomeReplies = {
     "Good day to you, citizen.", "Let’s not make this a habit."
 }
 
+local annoyedReplies = {
+    "Yeah, yeah – move along.",
+    "Enough thanks, citizen.",
+    "One more ‘thanks’ and you’re cleaning the Stockades.",
+}
+
 local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW = 10, 500, 30 * 1000, 15
 local interactionState = {}
 
@@ -134,28 +140,31 @@ local function OnPlayerSay(event, player, msg)
     purgeState(pGUID, now)
 
         if lower:find("thank", 1, true) then
-        local pData = interactionState[pGUID]
-        if pData and pData[cGUID] then
-            for _, st in pairs(pData[cGUID]) do
-                if st.lastReplyTime and now - st.lastReplyTime <= THANK_YOU_WINDOW then
-                    CreateLuaEvent(function()
-                        local pl = GetPlayerByGUID(pGUID)
-                        if not pl then return end
-                        for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
-                            if npc:GetGUIDLow() == cGUID
-                               and not npc:IsInCombat()
-                               and not npc:IsInEvadeMode() then
-                                npc:SendUnitSay(welcomeReplies[math.random(#welcomeReplies)], 0)
-                                break
-                            end
-                        end
-                    end, RESPONSE_DELAY, 1)
-                    return
-                end
+    interactionState[pGUID]            = interactionState[pGUID] or {}
+    interactionState[pGUID][cGUID]     = interactionState[pGUID][cGUID] or {}
+    local t = interactionState[pGUID][cGUID].thanks or { count = 0 }
+    t.count = t.count + 1
+    interactionState[pGUID][cGUID].thanks = t
+
+    local reply
+    if     t.count == 1 then reply = welcomeReplies[math.random(#welcomeReplies)]
+    elseif t.count == 2 then reply = annoyedReplies[1]
+    elseif t.count == 3 then reply = annoyedReplies[2]
+    else                    reply = annoyedReplies[3] end
+
+    CreateLuaEvent(function()
+        local pl = GetPlayerByGUID(pGUID); if not pl then return end
+        for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
+            if npc:GetGUIDLow() == cGUID
+               and not npc:IsInCombat()
+               and not npc:IsInEvadeMode() then
+                npc:SendUnitSay(reply, 0)
+                break
             end
         end
-        return
-    end
+    end, RESPONSE_DELAY, 1)
+    return
+end
 
     for alias, canonical in pairs(response_keys) do
         if lower:find(alias, 1, true) then
