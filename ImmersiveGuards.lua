@@ -141,11 +141,19 @@ local function OnPlayerSay(event, player, msg)
     purgeState(pGUID, now)
 
         if lower:find("thank", 1, true) then
-    interactionState[pGUID]            = interactionState[pGUID] or {}
-    interactionState[pGUID][cGUID]     = interactionState[pGUID][cGUID] or {}
+    interactionState[pGUID]        = interactionState[pGUID]        or {}
+    interactionState[pGUID][cGUID] = interactionState[pGUID][cGUID] or {}
     local t = interactionState[pGUID][cGUID].thanks or { count = 0 }
     t.count = t.count + 1
     interactionState[pGUID][cGUID].thanks = t
+
+    if t.count > 3 then
+        if now - (t.lastReplyTime or 0) < MUTE_TIME then
+            return
+        else
+            t.count = 1
+        end
+    end
 
     local reply
     if     t.count == 1 then reply = welcomeReplies[math.random(#welcomeReplies)]
@@ -160,6 +168,7 @@ local function OnPlayerSay(event, player, msg)
                and not npc:IsInCombat()
                and not npc:IsInEvadeMode() then
                 npc:SendUnitSay(reply, 0)
+                t.lastReplyTime = os.time()
                 break
             end
         end
