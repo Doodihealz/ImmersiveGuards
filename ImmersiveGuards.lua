@@ -99,7 +99,8 @@ local annoyedReplies = {
     "One more ‘thanks’ and you’re cleaning the Stockades.",
 }
 
-local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW = 10, 500, 30 * 1000, 15
+local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW, MUTE_TIME =
+      10,               500,           30 * 1000,        15,              120
 local interactionState = {}
 
 local function purgeState(pGUID, now)
@@ -176,13 +177,26 @@ end
                 st.count                           = st.count + 1
                 interactionState[pGUID][cGUID][keyword] = st
 
+                if st.count > 4 then
+                    if now - (st.lastReplyTime or 0) < MUTE_TIME then
+                        return
+                    else
+                        st.count = 1
+                    end
+                end
+
                 local r = base
                 if st.count == 2 then
-                    r = (city == "ironforge") and "You’ve asked enough, lad." or "Are you harassing me?"
+                    r = (city == "ironforge") and "You’ve asked enough, lad."
+                        or "Are you harassing me?"
                 elseif st.count == 3 then
-                    r = (city == "ironforge") and "Do I look like a bloody tour guide?" or "Leave me alone."
+                    r = (city == "ironforge") and "Do I look like a bloody tour guide?"
+                        or "Leave me alone."
                 elseif st.count == 4 then
-                    r = (city == "ironforge") and "Say another word and you'll be cooling your heels in the Hall of Justice." or "I will take you to the Stockades if you continue to waste my time."
+                    r = (city == "ironforge") and
+                        "Say another word and you'll be cooling your heels in the Hall of Justice."
+                        or
+                        "I will take you to the Stockades if you continue to waste my time."
                 end
 
                 local npcGUID, playerGUID = cGUID, pGUID
