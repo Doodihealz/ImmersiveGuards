@@ -25,319 +25,319 @@ local CITY_FACTIONS = {
 local CITY_CONFIG = {
     stormwind = {
     responses = {
-        ["warrior"] = "Warrior trainers are in the Command Center in Old Town. Look for Ander Germaine.",
-        ["auction house"] = "The Auction House is located in the Trade District.",
-        ["bank"] = "The bank is in the Trade District, near the Auction House.",
-        ["stormwind harbor"] = "Stormwind Harbor lies west of Cathedral Square, down the main road.",
-        ["deeprun tram"] = "The Deeprun Tram is in the Dwarven District, near the forges.",
-        ["inn"] = "The city’s main inn is in the Trade District.",
-        ["gryphon master"] = "The gryphon master is at the flight tower near the Trade District entrance.",
-        ["guild master"] = "Guild services are in the Trade District, west side.",
-        ["locksmith"] = "Try Benik Boltshead in the Dwarven District, near the blacksmiths.",
-        ["stable master"] = "The stable master, Jenova Stoneshield, is in the Dwarven District.",
-        ["barber"] = "The barbershop is in the Trade District, near the Auction House.",
-        ["officer's lounge"] = "The Officer’s Lounge is inside Champion’s Hall, in Old Town.",
-        ["battlemaster"] = "Battlemasters are in the War Room within Stormwind Keep.",
-        ["alchemy"] = "Alchemy is taught by Lilyssia Nightbreeze at Alchemy Needs in the Mage Quarter.",
-        ["leatherworking"] = "Simon Tanner teaches leatherworking at The Protective Hide in Old Town.",
-        ["herbalism"] = "Herbalism training is offered by Tannysa in the Mage Quarter.",
-        ["mining"] = "Gelman Stonehand teaches mining at Stonehand Mining in the Dwarven District.",
-        ["blacksmithing"] = "Blacksmith training is available at the forge in the Dwarven District.",
-        ["cooking"] = "Cooking is taught by Stephen Ryback at the Pig and Whistle Tavern in Old Town.",
-        ["enchanting"] = "Enchanting is handled by Lucan Cordell in the Mage Quarter.",
-        ["engineering"] = "Engineering trainers are in the Dwarven District. Ask for Farud or Lilliam Sparkspindle.",
-        ["first aid"] = "Angela Leifeld teaches first aid in Cathedral Square.",
-        ["fishing"] = "Fishing training is available from Arnold Leland in the Trade District by the canals.",
-        ["inscription"] = "Inscription is taught by Catarina Stanford in the Mage Quarter.",
-        ["skinning"] = "Skinning is taught by Maris Granger in Old Town, near the leatherworkers.",
-        ["tailoring"] = "Tailoring trainers are in the Mage Quarter. Ask for Georgio Bolero or Jalane Ayrole.",
-        ["druid"] = "Sheldras Moontree trains druids near the Moonwell in the Park District.",
-        ["hunter"] = "Hunter training is in the Dwarven District. Look for Einris, Ulfir, or Thorfin.",
-        ["mage"] = "Mage training takes place in the Wizard’s Sanctum in the Mage Quarter.",
-        ["paladin"] = "Paladin trainers are in Cathedral Square. Grayson Shadowbreaker leads the order.",
-        ["priest"] = "Priests train in Cathedral Square and the Park. Look for Laurena or Brother Benjamin.",
-        ["rogue"] = "Rogue training is in the SI:7 building in Old Town.",
-        ["shaman"] = "Farseer Umbrua trains shaman upstairs in the Golden Keg inn, Dwarven District.",
-        ["warlock"] = "Warlocks are trained in the Slaughtered Lamb’s basement, in the Mage Quarter.",
+        ["guerrero"] = "Los instructores de guerrero están en el Centro de Mando en el Casco Antiguo. Busca a Ander Germaine.",
+        ["casa de subastas"] = "La Casa de Subastas se encuentra en el Distrito de la Banca, cerca del banco.",
+        ["banco"] = "El banco está en el Distrito de la Banca, cerca de la Casa de Subastas.",
+        ["puerto de ventormenta"] = "El Puerto de Ventormenta se encuentra al oeste de la Plaza de la Catedral, siguiendo la calle principal.",
+        ["tranvia subterraneo"] = "El Tranvía Subterráneo está en el Distrito Enano, cerca de las forjas.",
+        ["posada"] = "La posada principal de la ciudad está en el Distrito de la Banca.",
+        ["maestro de grifos"] = "El maestro de grifos está en la torre de vuelo cerca de la entrada del Distrito de la Banca.",
+        ["maestro de hermandad"] = "Los servicios de hermandad están en el Distrito de la Banca, en el lado oeste.",
+        ["cerrajero"] = "Prueba con Benik Boltshead en el Distrito Enano, cerca de los herreros.",
+        ["maestro de establos"] = "La maestra de establos, Jenova Escudopiedra, está en el Distrito Enano.",
+        ["barbero"] = "La barbería está en el Distrito de la Banca, cerca de la Casa de Subastas.",
+        ["salon de oficiales"] = "El Salón de Oficiales se encuentra dentro del Salón de los Campeones, en el Casco Antiguo.",
+        ["maestro de batalla"] = "Los maestros de batalla están en la Sala de Guerra, dentro del Bastión de Ventormenta.",
+        ["alquimia"] = "La alquimia es enseñada por Lilyssia Brisa Nocturna en Necesidades de Alquimia en el Barrio de los Magos.",
+        ["peleteria"] = "Simon Tanner enseña peletería en La Piel Protectora en el Casco Antiguo.",
+        ["herboristeria"] = "La herboristería es enseñada por Tannysa en el Barrio de los Magos.",
+        ["mineria"] = "Gelman Manopiedra enseña minería en Minería Manopiedra en el Distrito Enano.",
+        ["herreria"] = "La herrería se enseña en la forja del Distrito Enano.",
+        ["cocina"] = "La cocina es enseñada por Stephen Ryback en la Taberna El Chifle y el Cerdo en el Casco Antiguo.",
+        ["encantamiento"] = "El encantamiento es impartido por Lucan Cordell en el Barrio de los Magos.",
+        ["ingenieria"] = "Los instructores de ingeniería están en el Distrito Enano. Pregunta por Farud o Lilliam Sparkspindle.",
+        ["primeros auxilios"] = "Angela Leifeld enseña primeros auxilios en la Plaza de la Catedral.",
+        ["pesca"] = "La pesca es enseñada por Arnold Leland en el Distrito de la Banca, junto a los canales.",
+        ["inscripcion"] = "La inscripción es enseñada por Catarina Stanford en el Barrio de los Magos.",
+        ["desuello"] = "El desuello es enseñado por Maris Granger en el Casco Antiguo, cerca de los peleteros.",
+        ["sastreria"] = "Los instructores de sastrería están en el Barrio de los Magos. Pregunta por Georgio Bolero o Jalane Ayrole.",
+        ["druida"] = "Sheldras Moontree entrena a los druidas cerca del Pozo de la Luna en el Distrito del Parque.",
+        ["cazador"] = "El entrenamiento de cazador es en el Distrito Enano. Busca a Einris, Ulfir, o Thorfin.",
+        ["mago"] = "El entrenamiento de mago tiene lugar en el Sanctum del Mago en el Barrio de los Magos.",
+        ["paladin"] = "Los instructores de paladín están en la Plaza de la Catedral. Grayson Shadowbreaker lidera la orden.",
+        ["sacerdote"] = "Los sacerdotes entrenan en la Plaza de la Catedral y el Parque. Busca a Laurena o al Hermano Benjamin.",
+        ["picaro"] = "El entrenamiento de pícaro es en el edificio SI:7 en el Casco Antiguo.",
+        ["chaman"] = "La Vidente Umbrua entrena a los chamanes en la planta alta de la posada El Barril Dorado, en el Distrito Enano.",
+        ["brujo"] = "Los brujos son entrenados en el sótano del Cordero Degollado, en el Barrio de los Magos.",
     }
     },
     ironforge = {
     responses = {
-        ["cooking"] = "Cooking training is at the Bronze Kettle in the Great Forge—ask for Daryl Riknussun.",
-        ["mining"] = "Mining training is in the Great Forge district. Look for Geofram Bouldertoe.",
-        ["blacksmithing"] = "Blacksmith training happens in the Great Forge. Trainers include Groum Stonebeard, Rotgath Stonebeard, Bengus Deepforge, or Ironus Coldsteel.",
-        ["enchanting"] = "Visit Thonys Pillarstone or Gimble Thistlefuzz in the Great Forge for enchanting lessons.",
-        ["engineering"] = "Engineering trainers are in Tinker Town. Ask for Jemma Quikswitch, Trixie Quikswitch or Springspindle Fizzlegear.",
-        ["first aid"] = "First Aid training is available from Nissa Firestone in the Great Forge physician building.",
-        ["fishing"] = "Fishing training is handled by Grimnur Stonebrand in the Forlorn Cavern, near the canals.",
-        ["inscription"] = "Inscription lessons are given by Elise Brightletter in the Mage Quarter's scribe area.",
-        ["skinning"] = "Skinning training is in the Great Forge. Ask Balthus Stoneflayer.",
-        ["tailoring"] = "Tailoring training happens in the Great Forge tailor shop with Jormund Stonebrow.",
-        ["alchemy"] = "Alchemy instruction is at Berryfizz’s Potions in Tinker Town, with Vosur Brakthel or Tally Berryfizz.",
-        ["druid"] = "Druid training is in the Commons, near the Moonwell.",
-        ["hunter"] = "Hunter trainers are located in the Military Ward. Look for Daera Brightspear, Olmin Burningbeard, Regnus Thundergranite or Ulbrek Firehand.",
-        ["mage"] = "Mage training happens within the Mystic Ward’s Hall of Mysteries. Trainers include Dink, Bink, Juli Stormkettle and Milstaff Stormeye.",
-        ["paladin"] = "Paladin trainers are in the Mystic Ward. See Beldruk Doombrow or Brandur Ironhammer.",
-        ["priest"] = "Priest training is offered in the Mystic Ward. Look for High Priest Rohan, Braenna Flintcrag or Toldren Deepiron.",
-        ["rogue"] = "Rogue training is in the Forlorn Cavern. Trainers include Hulfdan Blackbeard, Ormyr Flinteye and Fenthwick.",
-        ["shaman"] = "Shaman training is given by Farseer Javad in the Great Forge area.",
-        ["warlock"] = "Warlock trainers are in the Forlorn Cavern. Ask Alexander Calder, Briarthorn, Thistleheart or Keric Smolderblade.",
+        ["cocina"] = "El entrenamiento de cocina es en El Caldero de Bronce en la Gran Forja; pregunta por Daryl Riknussun.",
+        ["mineria"] = "El entrenamiento de minería es en el distrito de la Gran Forja. Busca a Geofram Bouldertoe.",
+        ["herreria"] = "El entrenamiento de herrería ocurre en la Gran Forja. Los instructores incluyen a Groum Barbalosa, Rotgath Barbalosa, Bengus Deepforge, o Ironus Coldsteel.",
+        ["encantamiento"] = "Visita a Thonys Pillarstone o Gimble Thistlefuzz en la Gran Forja para lecciones de encantamiento.",
+        ["ingenieria"] = "Los instructores de ingeniería están en Ciudad Manitas. Pregunta por Jemma Quikswitch, Trixie Quikswitch o Springspindle Fizzlegear.",
+        ["primeros auxilios"] = "El entrenamiento de primeros auxilios está disponible con Nissa Firestone en el edificio de médicos de la Gran Forja.",
+        ["pesca"] = "El entrenamiento de pesca es manejado por Grimnur Piedrabruja en la Caverna Sombría, cerca de los canales.",
+        ["inscripcion"] = "Las lecciones de inscripción son dadas por Elise Letrabrillo en el área de escribas del Barrio de los Magos.",
+        ["desuello"] = "El entrenamiento de desuello es en la Gran Forja. Pregunta a Balthus Stoneflayer.",
+        ["sastreria"] = "El entrenamiento de sastrería ocurre en la sastrería de la Gran Forja con Jormund Stonebrow.",
+        ["alquimia"] = "La instrucción de alquimia es en Pociones de Bayafiz en Ciudad Manitas, con Vosur Brakthel o Tally Berryfizz.",
+        ["druida"] = "El entrenamiento de druida es en La Comuna, cerca del Pozo de la Luna.",
+        ["cazador"] = "Los instructores de cazador se encuentran en el Cuartel Militar. Busca a Daera Brightspear, Olmin Burningbeard, Regnus Thundergranite o Ulbrek Firehand.",
+        ["mago"] = "El entrenamiento de mago ocurre dentro del Salón de los Misterios en el Barrio Místico. Los instructores incluyen a Dink, Bink, Juli Stormkettle y Milstaff Stormeye.",
+        ["paladin"] = "Los instructores de paladín están en el Barrio Místico. Ve a Beldruk Doombrow o Brandur Ironhammer.",
+        ["sacerdote"] = "El entrenamiento de sacerdote se ofrece en el Barrio Místico. Busca al Sumo Sacerdote Rohan, Braenna Flintcrag o Toldren Deepiron.",
+        ["picaro"] = "El entrenamiento de pícaro es en la Caverna Sombría. Los instructores incluyen a Hulfdan Blackbeard, Ormyr Flinteye y Fenthwick.",
+        ["chaman"] = "El entrenamiento de chamán es dado por el Vidente Javad en el área de la Gran Forja.",
+        ["brujo"] = "Los instructores de brujo están en la Caverna Sombría. Pregunta a Alexander Calder, Briarthorn, Thistleheart o Keric Smolderblade.",
     }
     },
     darnassus = {
     responses = {
-        ["warrior"]     = "Warrior trainers are on the Warrior’s Terrace. Seek out Sildanair, Arias’ta Bladesinger or Darnath Bladesinger.",
-        ["druid"]       = "Druid trainers are in the Cenarion Enclave. Look for Fylerian Nightwing, Denatharion, Mathrengyl Bearwalker, Lyros Swiftwind or Talran of the Wild.",
-        ["hunter"]      = "Hunter trainers and the pet trainer Silvaria are in the Hunter’s section of the Cenarion Enclave.",
-        ["rogue"]       = "Rogue training is in the Rogue Guild underground in the Cenarion Enclave. Try Syurna, Anishar or Erion Shadewhisper.",
-        ["priest"]      = "Priest trainers are in the Temple of the Moon. Look for Astarii Starseeker, Jandria, Lariia or Princess Alathea.",
-        ["mage"]        = "Mage training is upstairs in the Temple of the Moon. Trainers include Tarelvir, Dyrhara, Maelir and Myriam Spellwaker, with portal trainer Elissa Dumas.",
-        ["paladin"]     = "Paladin training is also in the Temple of the Moon—seek Rukua.",
-        ["warlock"]     = "Warlock training is near the temple area—Vitus Darkwalker.",
-        ["alchemy"]     = "Alchemy trainers Ainethil, Milla Fairancora and Sylvanna Forestmoon are on the Craftsmen’s Terrace.",
-        ["cooking"]     = "Cooking training is with Alegorn on the Craftsmen’s Terrace.",
-        ["first aid"]   = "First Aid training is offered by Dannelor on the Craftsmen’s Terrace.",
-        ["enchanting"]  = "Enchanting training is run by Lalina Summermoon and Taladan on the Craftsmen’s Terrace.",
-        ["tailoring"]   = "Tailoring is taught by Me’lynn and Trianna upstairs on the Craftsmen’s Terrace.",
-        ["leatherworking"] = "Leatherworking and skinning training is on Craftsmen’s Terrace—ask Telonis or Eladriel.",
-        ["herbalism"]   = "Herbalism training is in the Temple Gardens with Firodren Mooncaller (supplies by Chardryn).",
-        ["mining"]      = "Mining training is on the Craftsmen’s Terrace—look for Foreman Pernic.",
-        ["engineering"] = "Engineering training is on the Craftsmen’s Terrace with Tana Lentner.",
-        ["inscription"] = "Inscription lessons are given by Feyden Darkin on the Craftsmen’s Terrace.",
-        ["jewelcrafting"]= "Jewelcrafting training is also on the Craftsmen’s Terrace—see Aessa Silverdew.",
-        ["bank"]        = "The bank and guild services are in the Temple Gardens, near the entrance.",
-        ["auction house"]= "The Auction House is located on the Tradesmen’s Terrace, off the Craftsmen’s Terrace.",
-        ["inn"]         = "The inn is run by Saelienne on the Craftsmen’s Terrace, near the general supply area.",
-        ["stable master"]= "Stable Master Alassin is in the Cenarion Enclave by the hunter section.",
-        ["gryphon master"]= "The Hippogryph Master Leora serves the flight area in the Cenarion Enclave.",
-        ["guild master"]= "Guild services and the tabard vendor Ellaercia are on the Craftsmen’s Terrace alongside Lysheana.",
-        ["barber"]      = "There is no barber shop in Darnassus—try Stormwind or Ironforge.",
-        ["battlemaster"]= "Battlemasters for battlegrounds are on the Warrior’s Terrace, near the warrior trainers.",
+        ["guerrero"]     = "Los instructores de guerrero están en la Terraza de los Guerreros. Busca a Sildanair, Arias’ta Cantosable o Darnath Cantosable.",
+        ["druida"]       = "Los instructores de druida están en el Enclave Cenarion. Busca a Fylerian Ala nocturna, Denatharion, Mathrengyl Trotamuerte, Lyros Viento veloz o Talran de la Selva.",
+        ["cazador"]      = "Los instructores de cazador y el instructor de mascotas Silvaria están en la sección de cazadores del Enclave Cenarion.",
+        ["picaro"]       = "El entrenamiento de pícaro está en el Gremio de Pícaros subterráneo en el Enclave Cenarion. Prueba con Syurna, Anishar o Erion Susurrasombras.",
+        ["sacerdote"]      = "Los instructores de sacerdote están en el Templo de la Luna. Busca a Astarii Buscastrellas, Jandria, Lariia o Princesa Alathea.",
+        ["mago"]        = "El entrenamiento de mago es en el piso de arriba del Templo de la Luna. Los instructores incluyen a Tarelvir, Dyrhara, Maelir y Myriam Spellwaker, con la instructora de portales Elissa Dumas.",
+        ["paladin"]     = "El entrenamiento de paladín también es en el Templo de la Luna. Busca a Rukua.",
+        ["brujo"]     = "El entrenamiento de brujo está cerca del área del templo. Pregunta por Vitus Caminasombras.",
+        ["alquimia"]     = "Los instructores de alquimia Ainethil, Milla Fairancora y Sylvanna Forestmoon están en la Terraza de los Artesanos.",
+        ["cocina"]     = "El entrenamiento de cocina es con Alegorn en la Terraza de los Artesanos.",
+        ["primeros auxilios"]   = "El entrenamiento de primeros auxilios se ofrece por Dannelor en la Terraza de los Artesanos.",
+        ["encantamiento"]  = "El entrenamiento de encantamiento es dirigido por Lalina Verano lunar y Taladan en la Terraza de los Artesanos.",
+        ["sastreria"]   = "La sastrería es enseñada por Me’lynn y Trianna en el piso de arriba de la Terraza de los Artesanos.",
+        ["peleteria"] = "El entrenamiento de peletería y desuello está en la Terraza de los Artesanos. Pregunta a Telonis o Eladriel.",
+        ["herboristeria"]   = "El entrenamiento de herboristería es en los Jardines del Templo con Firodren Lunasabio.",
+        ["mineria"]      = "El entrenamiento de minería está en la Terraza de los Artesanos. Busca al Capataz Pernic.",
+        ["ingenieria"] = "El entrenamiento de ingeniería es en la Terraza de los Artesanos con Tana Lentner.",
+        ["inscripcion"] = "Las lecciones de inscripción son dadas por Feyden Darkin en la Terraza de los Artesanos.",
+        ["joyeria"]= "El entrenamiento de joyería también es en la Terraza de los Artesanos. Ve a Aessa Rocaplateada.",
+        ["banco"]        = "El banco y los servicios de hermandad están en los Jardines del Templo, cerca de la entrada.",
+        ["casa de subastas"]= "La Casa de Subastas se encuentra en la Terraza de los Comerciantes, saliendo de la Terraza de los Artesanos.",
+        ["posada"]         = "La posada es dirigida por Saelienne en la Terraza de los Artesanos, cerca del área de suministros generales.",
+        ["maestro de establos"]= "El Maestro de Estables Alassin está en el Enclave Cenarion junto a la sección de cazadores.",
+        ["maestro de grifos"]= "La Maestra de Hipogrifos Leora sirve al área de vuelo en el Enclave Cenarion.",
+        ["maestro de hermandad"]= "Los servicios de hermandad y la vendedora de tabardos Ellaercia están en la Terraza de los Artesanos junto a Lysheana.",
+        ["barbero"]      = "No hay barbería en Darnassus. Prueba en Ventormenta o Forjaz.",
+        ["maestro de batalla"]= "Los maestros de batalla para campos de batalla están en la Terraza de los Guerreros, cerca de los instructores de guerrero.",
     }
   },
 exodar = {
     responses = {
-        ["auction house"]   = "The Auction House is located in the Seat of the Naaru, in the central hall.",
-        ["bank"]            = "Bank services are in the Seat of the Naaru, in the central hub. Traders include Kellag, Jaela and Ossco.",
-        ["gryphon master"]  = "The gryphon master Stephanos serves players near the Seat of the Naaru flight point.",
-        ["stable master"]   = "Stable Master Arthaid is on the upper level of the central hub.",
-        ["inn"]             = "The inn is run by Caregiver Breel on the entrance platform just above the main ramp.",
-        ["mailbox"]         = "Mailboxes are by the bank, auction house, inn platform and by the gryphon flight area.",
-        ["guild master"]    = "Guild Master Funaam and tabard vendor Issca stand at the Trader’s Tier entrance.",
-        ["battlemaster"]    = "Battlemasters like Hunara and Liedel the Just are in the Vault of Lights.",
-        ["warrior"]         = "Warrior trainers Behomat, Kazi and Ahonan can be found on the Warrior’s Terrace above Trader’s Tier.",
-        ["paladin"]         = "Paladin trainers Baatun, Jol and Kavaan teach in the Chapel of Light, inside Vault of Lights.",
-        ["priest"]          = "Priest trainers Izmir, Caedmos and Fallat are in the Vault of Lights.",
-        ["mage"]            = "Mage trainers such as Edirah, Harnan and Bati are in the Vault of Lights. Lunaraa is the portal trainer.",
-        ["rogue"]           = "Rogue trainer Star Captain Barabos is on the Warrior’s Terrace overlooking Trader’s Tier.",
-        ["hunter"]          = "Hunter trainers Vord, Deremiis and Killac are in the Hunter’s Sanctum on Trader’s Tier, with pet trainer Ganaar.",
-        ["shaman"]          = "Shaman trainers including Farseer Nobundo, Hobahken, Sulaa and Gurrag are located in the Crystal Hall.",
-        ["warlock"]         = "Warlock trainer Soulspeaker Niir and demon trainer Atharuun dwell in the Crystal Hall.",
-        ["alchemy"]         = "Alchemy is taught by Lucc and Altaa near the Vault of Lights in Trader’s Tier.",
-        ["blacksmithing"]   = "Blacksmith training is available at the lower level of Trader’s Tier—ask for Miall.",
-        ["enchanting"]      = "Enchanting training happens in the Crystal Hall—seek out Nahogg.",
-        ["engineering"]     = "Engineering trainers are in Trader’s Tier. Ask for Ockil.",
-        ["inscription"]     = "Inscription lessons are offered by Thoth in the Crystal Hall.",
-        ["jewelcrafting"]   = "Jewelcrafting training is in the Crystal Hall—ask for Farii nearby the jewelcraft section.",
-        ["leatherworking"]  = "Leatherworking and skinning training is in Trader’s Tier—see Akham or Remere.",
-        ["tailoring"]       = "Tailoring training is upstairs in Trader’s Tier with Refik and assistant Kayaart.",
-        ["mining"]          = "Mining training is located at the back of Trader’s Tier—ask for Muaat.",
-        ["herbalism"]       = "Herbalism training is in the Vault of Lights—seek Cemmorhan.",
-        ["fishing"]         = "Fishing training is beside the Light‑Blessed Waters in the Crystal Hall with Erett.",
-        ["first aid"]       = "First Aid training is provided by Nus in the Crystal Hall near the crystal cave.",
-        ["cooking"]         = "Cooking is taught by Mumman on the platform above the main entrance, near the inn.",
+        ["casa de subastas"]   = "La Casa de Subastas se encuentra en el Trono de los Naaru, en el salón central.",
+        ["banco"]            = "Los servicios bancarios están en el Trono de los Naaru, en el centro. Los comerciantes incluyen a Kellag, Jaela y Ossco.",
+        ["maestro de grifos"]  = "El maestro de grifos Stephanos sirve a los jugadores cerca del punto de vuelo del Trono de los Naaru.",
+        ["maestro de establos"]   = "El Maestro de Estables Arthaid está en el nivel superior del centro.",
+        ["posada"]             = "La posada es dirigida por la Cuidadora Breel en la plataforma de entrada, justo encima de la rampa principal.",
+        ["buzon"]         = "Los buzones están junto al banco, la casa de subastas, la plataforma de la posada y el área de vuelo de grifos.",
+        ["maestro de hermandad"]    = "El Maestro de Hermandad Funaam y el vendedor de tabardos Issca están en la entrada de la Terraza de los Comerciantes.",
+        ["maestro de batalla"]    = "Los maestros de batalla como Hunara y Liedel el Justo están en la Cripta de las Luces.",
+        ["guerrero"]         = "Los instructores de guerrero Behomat, Kazi y Ahonan se pueden encontrar en la Terraza de los Guerreros, encima de la Terraza de los Comerciantes.",
+        ["paladin"]         = "Los instructores de paladín Baatun, Jol y Kavaan enseñan en la Capilla de la Luz, dentro de la Cripta de las Luces.",
+        ["sacerdote"]         = "Los instructores de sacerdote Izmir, Caedmos y Fallat están en la Cripta de las Luces.",
+        ["mago"]            = "Los instructores de mago como Edirah, Harnan y Bati están en la Cripta de las Luces. Lunaraa es la instructora de portales.",
+        ["picaro"]           = "El instructor de pícaro Capitán Estelar Barabos está en la Terraza de los Guerreros con vista a la Terraza de los Comerciantes.",
+        ["cazador"]          = "Los instructores de cazador Vord, Deremiis y Killac están en el Sanctum del Cazador en la Terraza de los Comerciantes, con el instructor de mascotas Ganaar.",
+        ["chaman"]          = "Los instructores de chamán, incluyendo a Vidente Nobundo, Hobahken, Sulaa y Gurrag, están localizados en el Salón de Cristal.",
+        ["brujo"]        = "El instructor de brujo Almasombría Niir y el instructor de demonios Atharuun residen en el Salón de Cristal.",
+        ["alquimia"]         = "La alquimia es enseñada por Lucc y Altaa cerca de la Cripta de las Luces en la Terraza de los Comerciantes.",
+        ["herreria"]   = "El entrenamiento de herrería está disponible en el nivel inferior de la Terraza de los Comerciantes; pregunta por Miall.",
+        ["encantamiento"]      = "El entrenamiento de encantamiento ocurre en el Salón de Cristal. Busca a Nahogg.",
+        ["ingenieria"]      = "Los instructores de ingeniería están en la Terraza de los Comerciantes. Pregunta por Ockil.",
+        ["inscripcion"]   = "Las lecciones de inscripción son ofrecidas por Thoth en el Salón de Cristal.",
+        ["joyeria"]   = "El entrenamiento de joyería es en el Salón de Cristal. Pregunta por Farii, cerca de la sección de joyería.",
+        ["peleteria"] = "El entrenamiento de peletería y desuello es en la Terraza de los Comerciantes. Ve a Akham o Remere.",
+        ["sastreria"]       = "El entrenamiento de sastrería es en el piso de arriba de la Terraza de los Comerciantes con Refik y la asistente Kayaart.",
+        ["mineria"]          = "El entrenamiento de minería se encuentra en la parte de atrás de la Terraza de los Comerciantes. Pregunta por Muaat.",
+        ["herboristeria"]          = "El entrenamiento de herboristería es en la Cripta de las Luces. Busca a Cemmorhan.",
+        ["pesca"]         = "El entrenamiento de pesca está junto a las Aguas Bendecidas por la Luz en el Salón de Cristal con Erett.",
+        ["primeros auxilios"]       = "El entrenamiento de primeros auxilios es provisto por Nus en el Salón de Cristal, cerca de la cueva de cristal.",
+        ["cocina"]         = "La cocina es enseñada por Mumman en la plataforma sobre la entrada principal, cerca de la posada.",
     }
   },
   orgrimmar = {
     responses = {
-        ["bank"]            = "The bank and auction house are in the Valley of Strength, along with mailboxes and trade vendors.",
-        ["auction house"]   = "Auction House services are in the Valley of Strength, next to the bank area.",
-        ["gryphon master"]  = "Wind Rider Master Doras operates outside the Valley of Strength flight point.",
-        ["stable master"]   = "Stable Master Xon’cha serves the stables in the Valley of Honor.",
-        ["inn"]             = "The inn is located in the Valley of Spirits, near the Spirit Lodge.",
-        ["guild master"]    = "Guild Master Urtrun Clanbringer and vendor Goram are near Grommash Hold in the Valley of Wisdom.",
-        ["battlemaster"]    = "Battlemasters for battlegrounds can be found in the Valley of Honor at the Hall of the Brave.",
-        ["warrior"]         = "Warrior trainers Grezz Ragefist, Sorek and Zel’mak are in the Hall of the Brave, Valley of Honor.",
-        ["hunter"]          = "Hunter training is in the Hunter’s Hall, Valley of Honor. Trainers include Sian’dur, Xor’juul, and Ormak Grimshot, plus pet trainer Xoa’stu.",
-        ["mage"]            = "Mage trainers Uthel’nay, Enyo, Deino and Pephredo teach in the Valley of Spirits. Lunaraa handles portal training.",
-        ["priest"]          = "Priest trainers Ur’kyo and X’year are stationed at the Spirit Lodge in the Valley of Spirits.",
-        ["rogue"]           = "Rogue training is in the Cleft of Shadow. Ask for Gest, Ormok or Shenthul.",
-        ["warlock"]         = "Warlock trainers such as Grol’dar, Zevrost and Mirket are in the Darkfire Enclave inside the Cleft of Shadow.",
-        ["shaman"]          = "Shaman training is in Grommash Hold in the Valley of Wisdom. Trainers include Kardris Dreamseeker, Sagorne Crestrider and Sian’tsu.",
-        ["alchemy"]         = "Alchemy training is offered at Yelmak’s Alchemy & Potions in The Drag. Trainers include Yelmak and Whuut.",
-        ["blacksmithing"]   = "Blacksmithing training happens in the Valley of Honor at The Burning Anvil, with Borgosh Corebender, Okothos Ironrager, Saru Steelfury or Shayis Steelfury.",
-        ["engineering"]     = "Engineering trainers Nogg, Roxxik and Thund teach craftsmen in Nogg’s Machine Shop, Valley of Honor.",
-        ["enchanting"]      = "Enchanting training is available at Godan’s Runeworks in The Drag. Ask for Godan or Jhag.",
-        ["leatherworking"]  = "Leatherworking and skinning training is in The Drag at Kodohide Leatherworkers—ask for Karolek, Kamari or Thuwd.",
-        ["tailoring"]       = "Tailoring training takes place at Magar’s Cloth Goods in The Drag. Ask for Magar or Snang.",
-        ["cooking"]         = "Cooking lessons happen in The Drag at Borstan’s Firepit. Speak to Zamja.",
-        ["herbalism"]       = "Herbalism training is given by Jandi at Jandi’s Arboretum in The Drag.",
-        ["mining"]          = "Mining training is located at Red Canyon Mining in the Valley of Honor. Trainers include Makaru or Gorina.",
-        ["first aid"]       = "First Aid training is at the Spirit Lodge in the Valley of Spirits. Ask for Arnok.",
-        ["fishing"]         = "Fishing lessons are offered by Lumak near the ponds in the Valley of Honor.",
-        ["inscription"]     = "Inscription training is in The Drag. Seek out Jo’mah.",
-        ["jewelcrafting"]   = "Jewelcrafting training are in The Drag. See Lugrah or Nerog.",
+        ["banco"]            = "El banco y la casa de subastas están en el Valle de la Fuerza, junto con los buzones y los vendedores.",
+        ["casa de subastas"]   = "Los servicios de la Casa de Subastas están en el Valle de la Fuerza, al lado del banco.",
+        ["maestro de grifos"]  = "El Maestro de Vientos Doras opera afuera del punto de vuelo del Valle de la Fuerza.",
+        ["maestro de establos"]   = "La Maestra de Estables Xon’cha sirve a los establos en el Valle del Honor.",
+        ["posada"]             = "La posada está localizada en el Valle de los Espíritus, cerca del Albergue del Espíritu.",
+        ["maestro de hermandad"]    = "El Maestro de Hermandad Urtrun Clanbringer y el vendedor Goram están cerca de la Fortaleza de Grommash en el Valle de la Sabiduría.",
+        ["maestro de batalla"]    = "Los maestros de batalla para campos de batalla se pueden encontrar en el Valle del Honor en la Sala del Valiente.",
+        ["guerrero"]         = "Los instructores de guerrero Grezz Puñofuria, Sorek y Zel’mak están en la Sala del Valiente, Valle del Honor.",
+        ["cazador"]          = "El entrenamiento de cazador es en el Salón del Cazador, Valle del Honor. Los instructores incluyen a Sian’dur, Xor’juul, y Ormak Disparosiniestro, además del instructor de mascotas Xoa’stu.",
+        ["mago"]            = "Los instructores de mago Uthel’nay, Enyo, Deino y Pephredo enseñan en el Valle de los Espíritus. Lunaraa maneja el entrenamiento de portales.",
+        ["sacerdote"]          = "Los instructores de sacerdote Ur’kyo y X’year están estacionados en el Albergue del Espíritu en el Valle de los Espíritus.",
+        ["picaro"]           = "El entrenamiento de pícaro es en la Garganta de la Sombra. Pregunta por Gest, Ormok o Shenthul.",
+        ["brujo"]        = "Los instructores de brujo como Grol’dar, Zevrost y Mirket están en el Enclave del Fuego Oscuro dentro de la Garganta de la Sombra.",
+        ["chaman"]          = "El entrenamiento de chamán es en la Fortaleza de Grommash en el Valle de la Sabiduría. Los instructores incluyen a Kardris Buscasueños, Sagorne Crestrider y Sian’tsu.",
+        ["alquimia"]         = "El entrenamiento de alquimia es ofrecido en Alquimia y Pociones de Yelmak en La Cueva. Los instructores incluyen a Yelmak y Whuut.",
+        ["herreria"]   = "El entrenamiento de herrería ocurre en el Valle del Honor en el Yunque Ardiente, con Borgosh Corebender, Okothos Ironrager, Saru Steelfury o Shayis Steelfury.",
+        ["ingenieria"]   = "Los instructores de ingeniería Nogg, Roxxik y Thund enseñan a los artesanos en el Taller de Máquinas de Nogg, Valle del Honor.",
+        ["encantamiento"]  = "El entrenamiento de encantamiento está disponible en las Runas de Godan en La Cueva. Pregunta por Godan o Jhag.",
+        ["peleteria"]  = "El entrenamiento de peletería y desuello es en La Cueva en Peletería de Piel de Kodo. Pregunta por Karolek, Kamari o Thuwd.",
+        ["sastreria"]   = "El entrenamiento de sastrería tiene lugar en las Telas de Magar en La Cueva. Pregunta por Magar o Snang.",
+        ["cocina"]         = "Las lecciones de cocina ocurren en La Cueva, en la Hoguera de Borstan. Habla con Zamja.",
+        ["herboristeria"]      = "El entrenamiento de herboristería es dado por Jandi en el Arboretum de Jandi en La Cueva.",
+        ["mineria"]          = "El entrenamiento de minería se encuentra en Minería del Cañón Rojo en el Valle del Honor. Los instructores incluyen a Makaru o Gorina.",
+        ["primeros auxilios"]   = "El entrenamiento de primeros auxilios es en el Albergue del Espíritu en el Valle de los Espíritus. Pregunta por Arnok.",
+        ["pesca"]         = "Las lecciones de pesca son ofrecidas por Lumak cerca de los estanques en el Valle del Honor.",
+        ["inscripcion"]      = "El entrenamiento de inscripción es en La Cueva. Busca a Jo’mah.",
+        ["joyeria"]   = "El entrenamiento de joyería es en La Cueva. Ve a Lugrah o Nerog.",
     }
   },
   thunderbluff = {
     responses = {
-      ["bank"]            = "The Bank, Auction House, and mailbox are on the Lower Rise—find them near the wind rider post and Reagent Vendor Chepi.",
-      ["auction house"]   = "The Auction House sits next to the bank on the Lower Rise.",
-      ["gryphon master"]  = "Wind Rider Master Tal is atop the wind‑rider roost on the Lower Rise.",
-      ["stable master"]   = "Stable Master Bulrug is on the Lower Rise by the bank.",
-      ["inn"]             = "Innkeeper Pala and the inn are located on the Lower Rise just south of the wind‑rider roost.",
-      ["guild master"]    = "You'll find the Guild Master and vendor Randah Songhorn on the Lower Rise near trade goods and the general supply tents.",
-      ["battlemaster"]    = "Battlemasters for battlegrounds (Alterac, Warsong, Arathi Basin) are on the Hunter’s Rise near the Hunter’s Hall.",
-      ["weapon master"]   = "Weapon Master Ansekhwa (one‑ and two‑handed maces/staves/guns) is also on the Lower Rise.",
-      ["warrior"]         = "Warrior trainers Sark Ragetotem, Torm Ragetotem, and Ker Ragetotem are in the hunter’s Hall on the Hunter’s Rise.",
-      ["hunter"]          = "Hunter trainers Urek, Kary, and Holt Thunderhorn (with pet trainer Hesuwa) are in the Hunter’s Hall on the Hunter’s Rise.",
-      ["mage"]            = "Mage trainers Archmage Shymm, Ursyn Ghull, and Thurston Xane, plus portal trainer Birgitte Cranston, are at the Pools of Vision on the Spirit Rise.",
-      ["priest"]          = "Priest trainers Miles Welsh, Malakai Cross, and Father Cobb are at the Pools of Vision on the Spirit Rise.",
-      ["shaman"]          = "Shaman trainers Siln, Beram, and Tigor Skychaser are based in the Hall of Spirits on the Spirit Rise.",
-      ["druid"]           = "Druid trainers Turak Runetotem, Sheal Runetotem, and Kym Wildmane are on the Elder Rise (Hall of Elders).",
-      ["alchemy"]         = "Alchemy trainers Kray and Bena Winterhoof are on the Middle Rise at Bena’s Alchemy.",
-      ["enchanting"]      = "Enchanting trainers Mot and Teg Dawnstrider are at Dawnstrider Enchanters on the Middle Rise.",
-      ["leatherworking"]  = "Leatherworking/specialists Mooranta, Tarn, Una, and Mak (and tailor Vhan, Tepa) are at the Armorer’s & Tailor’s shops on Middle Rise.",
-      ["herbalism"]       = "Herbalism trainer Komin Winterhoof and herbalism vendor Nida Winterhoof are in the herbal garden on the Middle Rise.",
-      ["mining"]          = "Mining trainer Brek Stonehoof is on the Lower Rise near the reagents vendor Kurm Stonehoof.",
-      ["blacksmithing"]   = "Blacksmithing trainers Thrag and Karn Stonehoof are at Kam’s Smithy on the Lower Rise.",
-      ["tailoring"]       = "Tailoring trainers Vhan and Tepa are just above the Armorer’s terrace on the Middle Rise.",
-      ["cooking"]         = "Cooking trainer Aska Mistrunner (and supplier Naal) are on the High Rise in Aska’s Kitchen.",
-      ["fishing"]         = "Fishing trainer Kah Mistrunner (and supplies Sewa) operate from Mountaintop Bait & Tackle on the High Rise.",
-      ["first aid"]       = "First Aid trainer Pand Stonebinder is located at the Pools of Vision area on the Spirit Rise.",
+      ["banco"]            = "El Banco, la Casa de Subastas y el buzón están en la Elevación Inferior. Encuéntralos cerca del puesto de jinetes del viento y el Vendedor de Reactivos Chepi.",
+      ["casa de subastas"]   = "La Casa de Subastas se encuentra al lado del banco en la Elevación Inferior.",
+      ["maestro de grifos"]  = "El Maestro de Vientos Tal está en la cima del puesto de jinetes del viento en la Elevación Inferior.",
+      ["maestro de establos"]   = "El Maestro de Estables Bulrug está en la Elevación Inferior junto al banco.",
+      ["posada"]             = "La Posadera Pala y la posada están localizadas en la Elevación Inferior, justo al sur del puesto de jinetes del viento.",
+      ["maestro de hermandad"]    = "Encontrarás al Maestro de Hermandad y al vendedor Randah Cancióncuerno en la Elevación Inferior, cerca de los bienes de comercio y las tiendas de suministros generales.",
+      ["maestro de batalla"]    = "Los maestros de batalla para campos de batalla (Alterac, Grito de Guerra, Cuenca de Arathi) están en la Elevación del Cazador, cerca del Salón del Cazador.",
+      ["maestro de armas"]   = "El Maestro de Armas Ansekhwa (mazas/bastones/armas de fuego de una y dos manos) también está en la Elevación Inferior.",
+      ["guerrero"]         = "Los instructores de guerrero Sark Ragetotem, Torm Ragetotem, y Ker Ragetotem están en el Salón del Cazador en la Elevación del Cazador.",
+      ["cazador"]          = "Los instructores de cazador Urek, Kary, y Holt Cuerno de Trueno (con el instructor de mascotas Hesuwa) están en el Salón del Cazador en la Elevación del Cazador.",
+      ["mago"]            = "Los instructores de mago Archimago Shymm, Ursyn Ghull, y Thurston Xane, más el instructor de portales Birgitte Cranston, están en los Pozos de la Visión en la Elevación del Espíritu.",
+      ["sacerdote"]            = "Los instructores de sacerdote Miles Welsh, Malakai Cross, y Padre Cobb están en los Pozos de la Visión en la Elevación del Espíritu.",
+      ["chaman"]          = "Los instructores de chamán Siln, Beram, y Tigor Cielo Abrasador están basados en el Salón de los Espíritus en la Elevación del Espíritu.",
+      ["druida"]           = "Los instructores de druida Turak Tótems de Runas, Sheal Tótems de Runas, y Kym Crinaví están en la Elevación de los Ancestros (Salón de los Ancianos).",
+      ["alquimia"]         = "Los instructores de alquimia Kray y Bena Pezuñainvierno están en la Elevación Media en Alquimia de Bena.",
+      ["encantamiento"]     = "Los instructores de encantamiento Mot y Teg Amanecer están en Encantadores Amanecer en la Elevación Media.",
+      ["peleteria"]  = "Los instructores de peletería/especialistas Mooranta, Tarn, Una, y Mak (y los sastres Vhan, Tepa) están en los talleres de Armaduras y Sastrería en la Elevación Media.",
+      ["herboristeria"]      = "El instructor de herboristería Komin Pezuñainvierno y la vendedora de suministros Nida Pezuñainvierno están en el jardín de hierbas en la Elevación Media.",
+      ["mineria"]          = "El instructor de minería Brek Pezuñapiedra está en la Elevación Inferior, cerca del vendedor de reactivos Kurm Pezuñapiedra.",
+      ["herreria"]   = "Los instructores de herrería Thrag y Karn Pezuñapiedra están en la Herrería de Kam en la Elevación Inferior.",
+      ["sastreria"]       = "Los instructores de sastrería Vhan y Tepa están justo encima de la terraza de Armaduras en la Elevación Media.",
+      ["cocina"]        = "La instructora de cocina Aska Trotebruma (y la proveedora Naal) están en la Elevación Alta en la Cocina de Aska.",
+      ["pesca"]         = "El instructor de pesca Kah Trotebruma (y suministros Sewa) opera desde Cebo y Aparejo de Montaña en la Elevación Alta.",
+      ["primeros auxilios"]  = "La instructora de primeros auxilios Pand Vinculapiedra está localizada en el área de los Pozos de la Visión en la Elevación del Espíritu.",
     }
   },
   undercity = {
   responses = {
-    ["bank"]            = "The bank and mailbox are in the Trade Quarter near the general goods vendors.",
-    ["auction house"]   = "The Auction House is next to the bank in the Trade Quarter.",
-    ["gryphon master"]  = "The flight master is located in the courtyard above, at the Undercity surface level near the zeppelin towers.",
-    ["stable master"]   = "Stable Master Anya Maulray is in the Trade Quarter.",
-    ["inn"]             = "Innkeeper Norman is in the Trade Quarter, near the cooking fire.",
-    ["guild master"]    = "The Guild Master and tabard vendor are in the Trade Quarter near the general goods area.",
-    ["battlemaster"]    = "Battlemasters are stationed in the War Quarter near the warrior trainers.",
-    ["weapon master"]   = "Weapon Master Archibald is in the War Quarter and trains crossbows, swords, polearms, and daggers.",
-    ["warrior"]         = "Warrior trainers are in the War Quarter alongside the blacksmithing area.",
-    ["priest"]          = "Priest trainers are also in the War Quarter.",
-    ["rogue"]           = "Rogue trainers are in the Rogues’ Quarter. Look for Carolyn Ward and her associates.",
-    ["warlock"]         = "Warlock trainers are in the Magic Quarter along with the demon trainer.",
-    ["mage"]            = "Mage trainers and the portal trainer are located in the Magic Quarter.",
-    ["shaman"]          = "We do not commune with the elements, and do not have Shaman trainers in Undercity.",
-    ["druid"]           = "There are no druid trainers in Undercity. You'll need to go to Thunder Bluff instead.",
-    ["alchemy"]         = "Alchemy trainers are in the Apothecarium on the west wing of the city.",
-    ["enchanting"]      = "Enchanting trainers are also found in the Apothecarium.",
-    ["herbalism"]       = "Herbalism training and supplies are located in the Apothecarium.",
-    ["engineering"]     = "Engineering trainers are in the Rogues’ Quarter near the tinkerers.",
-    ["first aid"]       = "First Aid training is available in the Rogues’ Quarter.",
-    ["leatherworking"]  = "Leatherworking and skinning trainers are found in the Rogues’ Quarter.",
-    ["tailoring"]       = "Tailoring trainers are located in the Magic Quarter.",
-    ["blacksmithing"]   = "Blacksmithing trainers are in the War Quarter near the forges.",
-    ["mining"]          = "Mining trainer and supplies are near the blacksmithing area in the War Quarter.",
-    ["cooking"]         = "Cooking trainer Eunice Burch is in the Trade Quarter by the fire pit.",
-    ["fishing"]         = "Fishing trainer Armand Cromwell is in the Magic Quarter near the canals.",
+    ["banco"]            = "El banco y el buzón están en el Barrio del Comercio, cerca de los vendedores de bienes generales.",
+    ["casa de subastas"]   = "La Casa de Subastas está al lado del banco en el Barrio del Comercio.",
+    ["maestro de grifos"]  = "El maestro de vuelo se encuentra en el patio de arriba, en el nivel de la superficie de Entrañas, cerca de las torres de zepelines.",
+    ["maestro de establos"]   = "La Maestra de Estables Anya Maulray está en el Barrio del Comercio.",
+    ["posada"]             = "El Posadero Norman está en el Barrio del Comercio, cerca de la hoguera de cocina.",
+    ["maestro de hermandad"]   = "El Maestro de Hermandad y el vendedor de tabardos están en el Barrio del Comercio, cerca del área de bienes generales.",
+    ["maestro de batalla"]    = "Los maestros de batalla están estacionados en el Barrio de la Guerra, cerca de los instructores de guerrero.",
+    ["maestro de armas"]   = "El Maestro de Armas Archibald está en el Barrio de la Guerra y entrena en ballestas, espadas, lanzas y dagas.",
+    ["guerrero"]         = "Los instructores de guerrero están en el Barrio de la Guerra junto al área de herrería.",
+    ["sacerdote"]          = "Los instructores de sacerdote también están en el Barrio de la Guerra.",
+    ["picaro"]        = "Los instructores de pícaro están en el Barrio de los Pícaros. Busca a Carolyn Ward y sus asociados.",
+    ["brujo"]        = "Los instructores de brujo están en el Barrio de la Magia junto con el instructor de demonios.",
+    ["mago"]           = "Los instructores de mago y el instructor de portales se encuentran en el Barrio de la Magia.",
+    ["chaman"]         = "Nosotros no nos comunicamos con los elementos, y no tenemos instructores de Chamán en Entrañas.",
+    ["druida"]           = "No hay instructores de druida en Entrañas. Tendrás que ir a Cima del Trueno en su lugar.",
+    ["alquimia"]         = "Los instructores de alquimia están en el Boticario en el ala oeste de la ciudad.",
+    ["encantamiento"]     = "Los instructores de encantamiento también se encuentran en el Boticario.",
+    ["herboristeria"]     = "El entrenamiento de herboristería y los suministros están localizados en el Boticario.",
+    ["ingenieria"]     = "Los instructores de ingeniería están en el Barrio de los Pícaros cerca de los mecánicos.",
+    ["primeros auxilios"]  = "El entrenamiento de primeros auxilios está disponible en el Barrio de los Pícaros.",
+    ["peleteria"]  = "Los instructores de peletería y desuello se encuentran en el Barrio de los Pícaros.",
+    ["sastreria"]       = "Los instructores de sastrería están localizados en el Barrio de la Magia.",
+    ["herreria"]   = "Los instructores de herrería están en el Barrio de la Guerra, cerca de las forjas.",
+    ["mineria"]          = "El instructor de minería y los suministros están cerca del área de herrería en el Barrio de la Guerra.",
+    ["cocina"]        = "La instructora de cocina Eunice Burch está en el Barrio del Comercio junto a la hoguera.",
+    ["pesca"]         = "El instructor de pesca Armand Cromwell está en el Barrio de la Magia, cerca de los canales.",
   }
 },
 silvermoon = {
     responses = {
-      ["bank"]           = "The Bank of Silvermoon is in the Bazaar, southeast corner near the Royal Exchange.",
-      ["auction house"]  = "There are two Auction Houses: one in the Bazaar center, and the Royal Exchange AH in the eastern section.",
-      ["gryphon master"] = "The flight master (Dragonhawk master Skymistress  Gloaming) stands just outside the Shepherd’s Gate west of the city.",
-      ["stable master"]  = "Stable Master Shalenn tends the mounts in Farstriders’ Square, outside the rangers’ hall.",
-      ["inn"]            = "Choose between the Silvermoon City Inn in the Royal Exchange (run by Velandra) or Wayfarer’s Rest between the Walk of Elders and Bazaar.",
-      ["guild master"]   = "Guild Master Tandrine and the tabard vendor reside along the Walk of Elders near the Magister’s Gate.",
-      ["battlemaster"]   = "Battlemasters are located near the training areas behind the Royal Exchange in Farstriders’ Square.",
-      ["weapon master"]  = "Warrior trainer Lothan Silverblade oversees arms near the foundry in Farstriders’ Square.",
-      ["warrior"]        = "Warrior trainers including Lothan are in Farstriders’ Square near the foundry.",
-      ["hunter"]         = "Hunter trainer Zandine is in Farstriders’ Square in the rangers’ hall.",
-      ["mage"]           = "Mage trainer Quithas (and other magisters) are inside Sunfury Spire.",
-      ["priest"]         = "Priest trainer Belestra is also inside Sunfury Spire.",
-      ["paladin"]        = "Champion Bachi of the Blood Knights trains paladins in the enclave in Farstriders’ Square under Lady Liadrin.",
-      ["rogue"]          = "Rogue trainer Zelanis and associates operate in Murder Row, in Farstriders’ Square.",
-      ["warlock"]        = "Warlock trainer Alamma (with demon‑trainer) is also in Murder Row within the inn‑district.",
-      ["druid"]          = "There are no druid trainers in Silvermoon City — go to Thunder Bluff instead.",
-      ["shaman"]         = "No shaman trainers here. Try Orgrimmar or Thunder Bluff.",
-      ["alchemy"]        = "Alchemy trainer Camberon is in the Court of the Sun next to the Royal Exchange.",
-      ["enchanting"]     = "Enchanting trainer Sedana stands in the Court of the Sun alcoves.",
-      ["herbalism"]      = "Herbalism trainer Nathera and alchemy supplies are in the Court of the Sun alcove.",
-      ["inscription"]    = "Inscription trainer Zantasia is found near alchemists in the Court of the Sun.",
-      ["jewelcrafting"]  = "Jewelcrafter Kalinda has her workshop on the south end of the Royal Exchange.",
-      ["leatherworking"] = "Leatherworking trainer Lynalis (and skinning supplies Ty’n) are along the Walk of Elders southeast end.",
-      ["mining"]         = "Mining trainer Belil is in Farstriders’ Square near the foundry.",
-      ["tailoring"]      = "Tailoring trainer Keelen is north of the Auction House in the Bazaar lower levels.",
-      ["cooking"]        = "Cooking trainer Sylann works upstairs in Wayfarer’s Rest near the tavern kitchens.",
-      ["first aid"]      = "First Aid trainer Alestus is on the Walk of Elders, near the entrance to the Royal Exchange.",
-      ["fishing"]        = "Fishing trainer Drathen is located on the Walk of Elders near the Royal Exchange.",
+      ["banco"]           = "El Banco de Lunargenta está en el Bazar, en la esquina sureste, cerca de la Bolsa Real.",
+      ["casa de subastas"]  = "Hay dos Casas de Subastas: una en el centro del Bazar, y la de la Bolsa Real en la sección este.",
+      ["maestro de grifos"] = "El maestro de vuelo (Maestra de Dracohalcón Ocaso) está justo afuera de la Puerta del Pastor al oeste de la ciudad.",
+      ["maestro de establos"]  = "La Maestra de Estables Shalenn cuida de las monturas en la Plaza de los Errantes, afuera del salón de los guardabosques.",
+      ["posada"]            = "Elige entre la Posada de Lunargenta en la Bolsa Real (dirigida por Velandra) o El Descanso del Viajero entre el Camino de los Ancianos y el Bazar.",
+      ["maestro de hermandad"]  = "El Maestro de Hermandad Tandrine y el vendedor de tabardos residen a lo largo del Camino de los Ancianos cerca de la Puerta de los Magister.",
+      ["maestro de batalla"]   = "Los maestros de batalla están localizados cerca de las áreas de entrenamiento detrás de la Bolsa Real en la Plaza de los Errantes.",
+      ["maestro de armas"]   = "El instructor de guerrero Lothan Hoja plateada supervisa las armas cerca de la fundición en la Plaza de los Errantes.",
+      ["guerrero"]        = "Los instructores de guerrero incluyendo a Lothan están en la Plaza de los Errantes cerca de la fundición.",
+      ["cazador"]        = "La instructora de cazador Zandine está en la Plaza de los Errantes en el salón de los guardabosques.",
+      ["mago"]          = "El instructor de mago Quithas (y otros magisters) están dentro de la Aguja Furia del Sol.",
+      ["sacerdote"]         = "La instructora de sacerdote Belestra también está dentro de la Aguja Furia del Sol.",
+      ["paladin"]        = "El Campeón Bachi de los Caballeros de Sangre entrena a los paladines en el enclave en la Plaza de los Errantes bajo el mando de Lady Liadrin.",
+      ["picaro"]          = "El instructor de pícaro Zelanis y sus asociados operan en la Fila del Asesino, en la Plaza de los Errantes.",
+      ["brujo"]         = "La instructora de brujo Alamma (con el instructor de demonios) también está en la Fila del Asesino dentro del distrito de la posada.",
+      ["druida"]           = "No hay instructores de druida en Lunargenta. Ve a Cima del Trueno en su lugar.",
+      ["chaman"]         = "No hay instructores de chamán aquí. Prueba en Orgrimmar o Cima del Trueno.",
+      ["alquimia"]       = "El instructor de alquimia Camberon está en la Corte del Sol al lado de la Bolsa Real.",
+      ["encantamiento"]    = "La instructora de encantamiento Sedana está en los nichos de la Corte del Sol.",
+      ["herboristeria"]      = "El instructor de herboristería Nathera y los suministros de alquimia están en el nicho de la Corte del Sol.",
+      ["inscripcion"]   = "La instructora de inscripción Zantasia se encuentra cerca de los alquimistas en la Corte del Sol.",
+      ["joyeria"]      = "La joyera Kalinda tiene su taller en el extremo sur de la Bolsa Real.",
+      ["peleteria"] = "La instructora de peletería Lynalis (y los suministros de desuello de Ty’n) están a lo largo del extremo sureste del Camino de los Ancianos.",
+      ["mineria"]          = "El instructor de minería Belil está en la Plaza de los Errantes cerca de la fundición.",
+      ["sastreria"]       = "El instructor de sastrería Keelen está al norte de la Casa de Subastas en los niveles inferiores del Bazar.",
+      ["cocina"]        = "La instructora de cocina Sylann trabaja en el piso de arriba en el Descanso del Viajero, cerca de las cocinas de la taberna.",
+      ["primeros auxilios"]   = "El instructor de primeros auxilios Alestus está en el Camino de los Ancianos, cerca de la entrada a la Bolsa Real.",
+      ["pesca"]         = "El instructor de pesca Drathen está localizado en el Camino de los Ancianos cerca de la Bolsa Real.",
     }
   },
 }
 
 local response_keys = {
-    ["warrior trainer"] = "warrior", ["warrior"] = "warrior", ["auction house"] = "auction house",
-    ["bank"] = "bank", ["stormwind harbor"] = "stormwind harbor", ["harbor"] = "stormwind harbor",
-    ["deeprun tram"] = "deeprun tram", ["inn"] = "inn", ["gryphon master"] = "gryphon master",
-    ["flight master"] = "gryphon master", ["flight"] = "gryphon master", ["flying"] = "gryphon master",
-    ["guild master"] = "guild master", ["locksmith"] = "locksmith", ["stable master"] = "stable master",
-    ["barber"] = "barber", ["officer's lounge"] = "officer's lounge", ["officers lounge"] = "officer's lounge",
-    ["battlemaster"] = "battlemaster", ["alchemy"] = "alchemy", ["leatherworking"] = "leatherworking",
-    ["herbalism"] = "herbalism", ["herb"] = "herbalism", ["mining"] = "mining",
-    ["blacksmithing"] = "blacksmithing", ["cooking"] = "cooking", ["enchanting"] = "enchanting",
-    ["engineering"] = "engineering", ["first aid"] = "first aid", ["fishing"] = "fishing",
-    ["inscription"] = "inscription", ["skinning"] = "skinning", ["tailoring"] = "tailoring",
-    ["druid trainer"] = "druid", ["druid"] = "druid", ["hunter trainer"] = "hunter", ["hunter"] = "hunter",
-    ["mage trainer"] = "mage", ["mage"] = "mage", ["paladin trainer"] = "paladin", ["paladin"] = "paladin",
-    ["priest trainer"] = "priest", ["priest"] = "priest", ["rogue trainer"] = "rogue", ["rogue"] = "rogue",
-    ["shaman trainer"] = "shaman", ["shaman"] = "shaman", ["warlock trainer"] = "warlock", ["warlock"] = "warlock"
+    ["instructor de guerrero"] = "warrior", ["guerrero"] = "warrior", ["casa de subastas"] = "auction house",
+    ["banco"] = "bank", ["puerto de ventormenta"] = "stormwind harbor", ["puerto"] = "stormwind harbor",
+    ["tranvia subterraneo"] = "deeprun tram", ["posada"] = "inn", ["maestro de grifos"] = "gryphon master",
+    ["maestro de vuelo"] = "gryphon master", ["vuelo"] = "gryphon master", ["volar"] = "gryphon master",
+    ["maestro de hermandad"] = "guild master", ["cerrajero"] = "locksmith", ["maestro de establos"] = "stable master",
+    ["barbero"] = "barber", ["salon de oficiales"] = "officer's lounge", ["salon de oficiales"] = "officer's lounge",
+    ["maestro de batalla"] = "battlemaster", ["alquimia"] = "alchemy", ["peleteria"] = "leatherworking",
+    ["herboristeria"] = "herbalism", ["hierbas"] = "herbalism", ["mineria"] = "mining",
+    ["herreria"] = "blacksmithing", ["cocina"] = "cooking", ["encantamiento"] = "enchanting",
+    ["ingenieria"] = "engineering", ["primeros auxilios"] = "first aid", ["pesca"] = "fishing",
+    ["inscripcion"] = "inscription", ["desuello"] = "skinning", ["sastreria"] = "tailoring",
+    ["instructor de druida"] = "druid", ["druida"] = "druid", ["instructor de cazador"] = "hunter", ["cazador"] = "hunter",
+    ["instructor de mago"] = "mage", ["mago"] = "mage", ["instructor de paladin"] = "paladin", ["paladin"] = "paladin",
+    ["instructor de sacerdote"] = "priest", ["sacerdote"] = "priest", ["instructor de picaro"] = "rogue", ["picaro"] = "rogue",
+    ["instructor de chaman"] = "shaman", ["chaman"] = "shaman", ["instructor de brujo"] = "warlock", ["brujo"] = "warlock"
 }
 
 local welcomeReplies = {
-    "You're welcome. Now move along please.", "Don't mention it.", "Happy to help... I guess.",
-    "Move along, citizen.", "Just doing my job.", "Fine, fine. You're welcome.",
-    "You're welcome. Try not to get lost again.", "What do I look like, a tour guide?",
-    "Good day to you, citizen.", "Let’s not make this a habit.",
-    "You got it.",
-    "Feel free to ask for more help. It's not like im going anywhere."
+    "De nada. Ahora, por favor, muévete.", "Ni lo menciones.", "Feliz de ayudar... supongo.",
+    "Muévete, ciudadano.", "Solo hago mi trabajo.", "Bien, bien. De nada.",
+    "De nada. Intenta no perderte de nuevo.", "¿Acaso parezco un guía turístico?",
+    "Buen día, ciudadano.", "No hagamos de esto una costumbre.",
+    "Entendido.",
+    "Siéntete libre de pedir más ayuda. No es como si fuera a ir a ninguna parte."
 }
 
 local annoyedRepliesalliance = {
-    "Yeah, yeah – move along.",
-    "Enough thanks, citizen.",
-    "One more ‘thanks’ and you’re cleaning the Stockades.",
-    "That's quite enough, citizen. I'm not your mother.",
-    "If you're that grateful, write a poem. Quietly.",
-    "Do I look like I need applause? Move along.",
-    "Keep this up and you'll be scrubbing boots in the Stockades.",
-    "One more 'thank you' and I report you for loitering.",
-    "You've thanked me more than my commanding officer ever has.",
-    "We get it. You're polite. Now go be polite somewhere else.",
-    "By Elune, you're clingy.",
-    "You must be new around here. We don't do this much talking.",
-    "Am I glowing, or do you always stare after a thank you?",
-    "You're one 'thanks' away from guard duty yourself.",
-    "Move along before I assign you to paperwork detail.",
-    "This isn’t a social club, citizen.",
-    "I'm not paid enough for gratitude overload.",
-    "You’re starting to sound like a bard. Please don’t.",
+    "Sí, sí, muévete.",
+    "Suficientes gracias, ciudadano.",
+    "Una 'gracias' más y estarás limpiando las Mazmorras.",
+    "Ya es suficiente, ciudadano. No soy tu madre.",
+    "Si estás tan agradecido, escribe un poema. En voz baja.",
+    "¿Acaso parezco necesitar aplausos? Muévete.",
+    "Sigue así y estarás fregando botas en las Mazmorras.",
+    "Un 'gracias' más y te denuncio por merodear.",
+    "Me has dado las gracias más veces que mi oficial al mando.",
+    "Ya entendimos. Eres educado. Ahora ve a ser educado en otro lugar.",
+    "Por Elune, eres pegajoso.",
+    "Debes ser nuevo por aquí. No hablamos tanto.",
+    "¿Estoy brillando, o siempre te quedas mirando después de dar las gracias?",
+    "Estás a un 'gracias' de tener tu propio turno de guardia.",
+    "Muévete antes de que te asigne a los papeleos.",
+    "Esto no es un club social, ciudadano.",
+    "No me pagan lo suficiente para el exceso de gratitud.",
+    "Estás empezando a sonar como un bardo. Por favor, no lo hagas.",
 }
 
 local annoyedRepliesHorde = {
-    "This isn't a tea party. Move.",
-    "Say 'thank you' again. I dare you.",
-    "We're not friends. Keep walking.",
-    "You wasting my time, grunt?",
-    "One more word and you'll be on latrine duty.",
-    "If you’re trying to impress me, it’s not working.",
-    "Enough. Go do something useful.",
-    "You talk too much. Fight or leave.",
-    "Gratitude won’t save you if you get soft.",
-    "You think I do this for praise? Get out of my face.",
-    "You want a medal too?",
-    "Go bother a peon.",
-    "We’re Horde. We don’t coddle each other.",
-    "That tongue of yours is going to get you in trouble.",
-    "Next time, just nod and go.",
-    "You show weakness with every word.",
-    "We don't need thanks. We need results.",
-    "Talk less. Bleed more.",
+    "Esto no es una fiesta de té. Muévete.",
+    "Di 'gracias' de nuevo. Te reto.",
+    "No somos amigos. Sigue caminando.",
+    "¿Estás perdiendo mi tiempo, esbirro?",
+    "Una palabra más y estarás en el turno de letrinas.",
+    "Si intentas impresionarme, no está funcionando.",
+    "Suficiente. Ve a hacer algo útil.",
+    "Hablas demasiado. Lucha o vete.",
+    "La gratitud no te salvará si te vuelves blando.",
+    "¿Crees que hago esto por elogios? Apártate de mi cara.",
+    "¿Quieres una medalla también?",
+    "Ve a molestar a un peón.",
+    "Somos de la Horda. No nos mimamos entre nosotros.",
+    "Esa lengua tuya te va a meter en problemas.",
+    "La próxima vez, solo asiente y vete.",
+    "Muestras debilidad con cada palabra.",
+    "No necesitamos gracias. Necesitamos resultados.",
+    "Habla menos. Sangra más.",
 }
 
 local DETECTION_RADIUS, RESPONSE_DELAY, COOLDOWN_TIME, THANK_YOU_WINDOW, MUTE_TIME =
@@ -401,90 +401,4 @@ local function OnPlayerSay(event, player, msg)
     interactionState[pGUID][cGUID].thanks = t
 
     if t.count > 3 then
-        if now - (t.lastReplyTime or 0) < MUTE_TIME then
-            return
-        else
-            t.count = 1
-        end
-    end
-
-    if not city then return end
-    local isHordeCity = (city == "orgrimmar" or city == "undercity" or city == "thunderbluff" or city == "silvermoon")
-local annoyedList = isHordeCity and annoyedRepliesHorde or annoyedRepliesAlliance
-
-local reply
-if     t.count == 1 then reply = welcomeReplies[math.random(#welcomeReplies)]
-elseif t.count == 2 then reply = annoyedList[1]
-elseif t.count == 3 then reply = annoyedList[2]
-else                    reply = annoyedList[3] end
-
-    CreateLuaEvent(function()
-        local pl = GetPlayerByGUID(pGUID); if not pl then return end
-        for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
-            if npc:GetGUIDLow() == cGUID
-               and not npc:IsInCombat()
-               and not npc:IsInEvadeMode() then
-                npc:SendUnitSay(reply, 0)
-                t.lastReplyTime = os.time()
-                break
-            end
-        end
-    end, RESPONSE_DELAY, 1)
-    return
-end
-
-    for alias, canonical in pairs(response_keys) do
-        if lower:find(alias, 1, true) then
-            local keyword, base = canonical, cfg.responses[canonical]
-            if base then
-                interactionState[pGUID]            = interactionState[pGUID]            or {}
-                interactionState[pGUID][cGUID]     = interactionState[pGUID][cGUID]     or {}
-                local st                           = interactionState[pGUID][cGUID][keyword] or { count = 0 }
-                st.count                           = st.count + 1
-                interactionState[pGUID][cGUID][keyword] = st
-
-                if st.count > 4 then
-                    if now - (st.lastReplyTime or 0) < MUTE_TIME then
-                        return
-                    else
-                        st.count = 1
-                    end
-                end
-
-                local r = base
-                if st.count == 2 then
-                    r = (city == "ironforge") and "You’ve asked enough, lad."
-                        or "Are you harassing me?"
-                elseif st.count == 3 then
-                    r = (city == "ironforge") and "Do I look like a bloody tour guide?"
-                        or "Leave me alone."
-                elseif st.count == 4 then
-                    r = (city == "ironforge") and
-                        "Say another word and you'll be cooling your heels in the Hall of Justice."
-                        or
-                        "I will take you to the Stockades if you continue to waste my time."
-                end
-
-                local npcGUID, playerGUID = cGUID, pGUID
-                CreateLuaEvent(function()
-                    local pl = GetPlayerByGUID(playerGUID); if not pl then return end
-                    for _, npc in ipairs(pl:GetCreaturesInRange(DETECTION_RADIUS)) do
-                        if npc:GetGUIDLow() == npcGUID
-                           and not npc:IsInCombat()
-                           and not npc:IsInEvadeMode() then
-                            npc:SendUnitSay(r, 0)
-                            local pd = interactionState[playerGUID]
-                            if pd and pd[npcGUID] and pd[npcGUID][keyword] then
-                                pd[npcGUID][keyword].lastReplyTime = os.time()
-                            end
-                            break
-                        end
-                    end
-                end, RESPONSE_DELAY, 1)
-                return
-            end
-        end
-    end
-end
-
-RegisterPlayerEvent(18, OnPlayerSay)
+        if now - (t.lastReply
