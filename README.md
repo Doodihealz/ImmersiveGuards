@@ -6,6 +6,6 @@ This script is mostly just a proof of concept. All major cities work. Walk up to
 
 EN for English
 
-ES for Spanish (Thank you Yaniel!)
+ES for Spanish (Thank you Yaniel1230!)
 
 Don't ask them the same question multiple times. They get annoyed. You can also thank them and they'll reply.
